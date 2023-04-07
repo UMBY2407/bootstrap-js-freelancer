@@ -110,77 +110,91 @@
       </section>
       <!-- fine section portfolio -->
       <!-- inizio section offer-->
+    <form onsubmit="calculateCommitionPrice(event)">
       <section id="offer" class="bg-info">
         <div class="container p-4">
           <h2 class="text-center text-uppercase">Want an offer?</h2>
           <!-- TODO: PROGETTARE IL FORM QUI -->
           <div class="row">
             <div class="col-6">
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">First Name</label>
-                        <input type="email" class="form-control" id="floatingInput" placeholder="Enter you first name...">
-                    </div>
-                </form>
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input type="email" class="form-control" id="firstName" placeholder="Enter you first name...">
+                </div>
+              </form>
             </div>
             <div class="col-6">
                 <form>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                        <input type="email" class="form-control" id="floatingInput1" placeholder="Enter your last name...">
+                        <input type="email" class="form-control" id="lastName" placeholder="Enter your last name...">
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="row">
+          </div>
+          <div class="row">
             <div class="col-6">
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="floatingInput2" placeholder="name@example.com">
-                    </div>
-                </form>
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
+                </div>
+              </form>
             </div>
             <div class="col-6">
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Hours requested</label>
-                        <input type="email" class="form-control" id="floatingInput3" placeholder="Hours requested...">
-                    </div>
-                </form>
+              <form>
+                <div class="mb-3">
+                  <div id="hoursLabel">
+                    <label for="exampleInputEmail1" class="form-label">Hours requested</label>
+                    <input type="text" class="form-control" id="hours" placeholder="Hours requested...">
+                  </div>
+                </div>
+              </form>
             </div>
-        </div>
-        <div class="row">
+          </div>
+          <div class="row">
             <div class="col-6">
-                <form>
-                    <label for="exampleInputEmail1" class="form-label">Type of Commition</label>
-                    <select class="form-select" id="floatingSelectGrid">
-                        <option value="1">Sviluppo Backend (20.50&#8364;/h)</option>
-                        <option value="2">Sviluppo Frontend (15.30&#8364;/h)</option>
-                        <option value="3">Analisi Progettuale di un Progetto (33.60&#8364;/h)</option>
-                    </select>
-                </form>
+              <form>
+                <label for="exampleInputEmail1" class="form-label">Type of Commition</label>
+                  <select class="form-select" id="typeOfCommition">
+                    <option value="Back-end">Sviluppo Back-end (20.50&#8364;/h)</option>
+                    <option value="Front-end">Sviluppo Front-end (15.30&#8364;/h)</option>
+                    <option value="Analisys">Analisi Progettuale di un Progetto (33.60&#8364;/h)</option>
+                </select>
+              </form>
             </div>
             <div class="col-6">
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Discount Code</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="12345ABCDEF">
-                    </div>
-                </form>
+              <form>
+                <div class="mb-3">
+                  <label for="discountCode" class="form-label">Discount Code</label>
+                  <input type="text" name="discountCode" class="form-control" id="discountCode" placeholder="12354ABCDEF">
+                </div>
+              </form>
             </div>
-        </div>
-        <div class="row">
+          </div>
+          <div class="row">
             <div class="col-12 h-100">
-                <label for="exampleInputEmail1" class="form-label">Message</label>
-                <textarea class="form-control  mb-3 h-100" placeholder="Specify your commition..." id="floatingTextarea"></textarea>
+              <label for="exampleInputEmail1" class="form-label">Message</label>
+              <textarea class="form-control  mb-3 h-100" placeholder="Specify your commition..." id="floatingTextarea"></textarea>
             </div>
+          </div>
+          <div class="row">
             <div class="col-12 text-center mb-3">
-                <button type="button" class="btn btn-warning">Send</button>
+              <div class="submit">
+                <button type="submit" id="button" class="btn btn-warning">Send</button>
+              </div>
             </div>
-        </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center mb-3 text-light">
+              <h2>Your Price</h2>
+              <div class="price-container"><span id="price">--.--</span> €</div>
+            </div>
+          </div>
         </div>   
       </section>
+    </form>
       <!-- fine section offer-->
     </main>
     <!-- fine main -->
