@@ -6,10 +6,7 @@ let discountCodes = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 //-------------------------------------FUNZIONI------------------------------------------------//
 
 function calculateCommitionPrice(event){
-    event.preventDefault();
-
-    console.log("FUNZIONAAAA!!!");
-    
+    event.preventDefault();    
     let commitionPrice = 0;
     let hourRequestedStringa = document.getElementById('hours').value;
     let hourRequested = parseInt(hourRequestedStringa);
@@ -28,7 +25,36 @@ function calculateCommitionPrice(event){
             commitionPrice += 33.60;
         break;
     }
-        console.log(commitionPrice)
-    commitionPrice = commitionPrice * hourRequested;
+        console.log(commitionPrice);
+    
+    let discountCodeUser = document.getElementById("discountCode").value;
+
+    let isDoscountCodeAvailable = discountCodes.includes(discountCodeUser);
+
+    if(isDoscountCodeAvailable){
+        commitionPrice = commitionPrice * 0.25;
+        discountCodes = removeElementFromArray(discountCodes, discountCodeUser);
+
+        console.log("Il codice sconto è stato corettamente applicato!");
+    } else if (discountCodeUser != "") {
+        //Cambiare colore Label
+            console.log("Il codice sconto non è valido!");
+    } else {
+        console.log("Nessuno Sconto Applicato");
+    }
+
+        console.log(commitionPrice);
+    document.getElementById("price").innerHTML = commitionPrice.toFixed(2);
+    commitionPrice = (commitionPrice * hourRequested);
     document.getElementById('price').innerHTML = commitionPrice.toFixed(2);
+}
+
+function removeElementFromArray(array, elementToRemove){
+
+    const index = array.indexOf(elementToRemove);
+
+    array.splice(index, 1);
+
+    return array;
+
 }
