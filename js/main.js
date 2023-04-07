@@ -37,7 +37,8 @@ function calculateCommitionPrice(event){
 
         console.log("Il codice sconto è stato corettamente applicato!");
     } else if (discountCodeUser != "") {
-        //Cambiare colore Label
+        //Informare il cliente
+        alert ("Il codice sconto non è valido! Nessuno Sconto Applicato");
             console.log("Il codice sconto non è valido!");
     } else {
         console.log("Nessuno Sconto Applicato");
