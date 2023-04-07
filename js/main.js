@@ -11,7 +11,7 @@ function calculateCommitionPrice(event){
     console.log("FUNZIONAAAA!!!");
     
     let commitionPrice = 0;
-    let hourRequestedStringa = document.getElementById('hours').innerHTML;
+    let hourRequestedStringa = document.getElementById('hours').value;
     let hourRequested = parseInt(hourRequestedStringa);
         console.log(hourRequested);
     let selectedCommition = document.getElementById("typeOfCommition").value;
